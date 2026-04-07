@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const LOGO_SRC = "/losgo.png";
 
@@ -30,6 +31,10 @@ function ConferenceLogo({ isScrolled = false, menuVersion = false }) {
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
+
+  const isStartPlanningPage = location.pathname === "/start-planning";
+  const hasSolidHeader = isScrolled || isStartPlanningPage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -91,7 +96,7 @@ export default function Header() {
       >
         <div
           className={`transition-all duration-300 ${
-            isScrolled
+            hasSolidHeader
               ? "bg-[rgba(40,27,29,0.92)] shadow-2xl backdrop-blur-md"
               : "bg-transparent"
           }`}
@@ -99,17 +104,15 @@ export default function Header() {
           <div className="mx-auto max-w-[1600px] px-4 md:px-8 lg:px-12">
             <div
               className={`flex items-center justify-center md:justify-between transition-all duration-300 ${
-                isScrolled
+                hasSolidHeader
                   ? "min-h-[118px] md:min-h-[90px]"
                   : "min-h-[154px] md:min-h-[118px]"
               }`}
             >
-              {/* Logo */}
-              <div className="flex justify-center md:block min-w-0 shrink-0">
-                <ConferenceLogo isScrolled={isScrolled} />
+              <div className="flex min-w-0 shrink-0 justify-center md:block">
+                <ConferenceLogo isScrolled={hasSolidHeader} />
               </div>
 
-              {/* Desktop nav */}
               <nav className="hidden lg:flex items-center gap-10 xl:gap-14">
                 {topNavLinks.map((item) => (
                   <a
@@ -122,7 +125,6 @@ export default function Header() {
                 ))}
               </nav>
 
-              {/* Desktop CTA */}
               <div className="hidden lg:flex items-center shrink-0">
                 <a
                   href="/start-planning"
@@ -134,7 +136,6 @@ export default function Header() {
             </div>
           </div>
 
-          {/* Mobile menu */}
           <div
             className={`overflow-hidden border-t border-white/10 transition-all duration-300 lg:hidden ${
               mobileOpen ? "max-h-[420px] opacity-100" : "max-h-0 opacity-0"

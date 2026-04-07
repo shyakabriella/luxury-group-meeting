@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const fieldClass =
   "h-[46px] w-full border border-[#4f5b61] bg-transparent px-4 text-[15px] text-[#243540] outline-none placeholder:text-[#243540] md:h-[56px] md:text-[16px]";
@@ -10,13 +11,22 @@ const textareaClass =
   "min-h-[180px] w-full border border-[#4f5b61] bg-transparent px-4 py-3 text-[15px] text-[#243540] outline-none placeholder:text-[#243540] md:min-h-[315px] md:text-[16px]";
 
 export default function StartPlanning() {
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
   };
 
+  const handleBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <section className="relative overflow-hidden bg-[#f3f2ef]">
-      {/* Mobile background only */}
       <div
         className="absolute inset-0 md:hidden"
         style={{
@@ -29,6 +39,16 @@ export default function StartPlanning() {
 
       <div className="relative mx-auto max-w-[1240px] px-4 py-8 md:px-8 md:py-10 lg:px-10">
         <div className="mx-auto max-w-[1180px]">
+          <div className="mb-5 md:hidden">
+            <button
+              type="button"
+              onClick={handleBack}
+              className="inline-flex min-h-[42px] items-center justify-center border border-[#4f5b61] bg-white/80 px-4 text-[13px] font-medium uppercase tracking-[0.12em] text-[#243540] backdrop-blur-sm transition hover:bg-white"
+            >
+              ← Back
+            </button>
+          </div>
+
           <h1 className="text-center text-[44px] font-light leading-none tracking-[-0.03em] text-[#243540] sm:text-[54px] md:text-[72px]">
             Start Planning
           </h1>
@@ -36,7 +56,6 @@ export default function StartPlanning() {
           <div className="mx-auto mt-8 max-w-[560px] bg-white/78 p-5 shadow-[0_10px_30px_rgba(0,0,0,0.10)] backdrop-blur-[4px] md:mt-10 md:max-w-none md:bg-transparent md:p-0 md:shadow-none md:backdrop-blur-0">
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 gap-5 lg:grid-cols-[1fr_1fr_380px] lg:gap-6">
-                {/* Left column */}
                 <div className="space-y-5">
                   <input type="text" placeholder="First Name *" className={fieldClass} />
                   <input type="text" placeholder="Last Name *" className={fieldClass} />
@@ -46,7 +65,6 @@ export default function StartPlanning() {
                   <input type="text" placeholder="Guest Rooms *" className={fieldClass} />
                 </div>
 
-                {/* Middle column */}
                 <div className="space-y-5">
                   <input type="date" className={`${fieldClass} [color-scheme:light]`} />
                   <input type="date" className={`${fieldClass} [color-scheme:light]`} />
@@ -71,7 +89,11 @@ export default function StartPlanning() {
                     </div>
                   </div>
 
-                  <input type="number" placeholder="Number of Attendees *" className={fieldClass} />
+                  <input
+                    type="number"
+                    placeholder="Number of Attendees *"
+                    className={fieldClass}
+                  />
 
                   <select defaultValue="" className={selectClass}>
                     <option value="" disabled>
@@ -95,7 +117,6 @@ export default function StartPlanning() {
                   </select>
                 </div>
 
-                {/* Right column */}
                 <div className="space-y-5">
                   <div className="flex flex-col gap-3 md:flex-row md:items-center">
                     <label
@@ -112,7 +133,6 @@ export default function StartPlanning() {
                 </div>
               </div>
 
-              {/* Consent */}
               <div className="mt-6 space-y-4">
                 <label className="flex items-start gap-3 text-[14px] leading-[1.5] text-[#243540] md:text-[15px]">
                   <input

@@ -90,7 +90,11 @@ export default function Layouts() {
 
       <main
         className={`${
-          isOverlayPage ? "pt-[56px] md:pt-[40px]" : "pt-[200px] md:pt-[140px]"
+          isStartPlanningPage
+            ? "pt-[210px] md:pt-[164px]"
+            : isOverlayPage
+            ? "pt-[56px] md:pt-[40px]"
+            : "pt-[200px] md:pt-[140px]"
         } ${isStartPlanningPage ? "pb-0" : "pb-[74px] lg:pb-0"}`}
       >
         <Outlet />
