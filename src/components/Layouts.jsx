@@ -72,7 +72,14 @@ export default function Layouts() {
   const location = useLocation();
   const pathname = location.pathname;
 
-  const overlayPages = ["/", "/venues", "/group-services", "/room-blocks", "/gallery"];
+  const overlayPages = [
+    "/",
+    "/venues",
+    "/group-services",
+    "/room-blocks",
+    "/gallery",
+  ];
+
   const isOverlayPage = overlayPages.includes(pathname);
   const isStartPlanningPage = pathname === "/start-planning";
 
