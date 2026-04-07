@@ -43,7 +43,7 @@ export default function Wellcom() {
   };
 
   return (
-    <section className="relative min-h-[calc(100vh-40px)] overflow-hidden">
+    <section className="relative min-h-[calc(100vh-56px)] overflow-hidden md:min-h-[calc(100vh-40px)]">
       <style>
         {`
           @keyframes heroFadeUp {
@@ -102,15 +102,15 @@ export default function Wellcom() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/18 to-black/30" />
 
       {/* Main Content */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-40px)] max-w-[1800px] items-center px-4 pb-8 pt-[110px] sm:px-6 sm:pt-[120px] md:px-8 md:pt-[130px] lg:px-10 lg:pt-[145px] xl:px-14">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-56px)] max-w-[1800px] items-center px-4 pb-24 pt-[210px] sm:px-6 sm:pt-[220px] md:min-h-[calc(100vh-40px)] md:px-8 md:pb-8 md:pt-[130px] lg:px-10 lg:pt-[145px] xl:px-14">
         <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
           {/* Left Text */}
           <div
             key={`copy-${current}`}
-            className="hero-copy-animate flex min-h-[280px] items-end lg:min-h-[520px]"
+            className="hero-copy-animate flex min-h-[320px] items-end lg:min-h-[520px]"
           >
-            <div className="max-w-[760px] pb-2 sm:pb-4 md:pb-6 lg:pb-8">
-              <p className="mb-4 text-[14px] font-medium uppercase tracking-[0.18em] text-white/85 md:mb-6 md:text-[16px]">
+            <div className="max-w-[760px] pb-2 text-center lg:pb-8 lg:text-left">
+              <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.18em] text-white/85 sm:text-[13px] md:mb-6 md:text-[16px]">
                 {slides[current].eyebrow}
               </p>
 
@@ -121,11 +121,21 @@ export default function Wellcom() {
                 <br />
                 {slides[current].title[2]}
               </h1>
+
+              {/* Mobile Start Planning button only */}
+              <div className="mt-7 lg:hidden">
+                <a
+                  href="/start-planning"
+                  className="inline-flex min-h-[48px] items-center justify-center bg-[#a99258] px-7 text-[13px] font-medium uppercase tracking-[0.14em] text-white transition hover:opacity-90"
+                >
+                  Start Planning
+                </a>
+              </div>
             </div>
           </div>
 
-          {/* Right Form Card */}
-          <div className="flex justify-center lg:justify-end">
+          {/* Right Form Card - desktop only */}
+          <div className="hidden justify-center lg:flex lg:justify-end">
             <div className="w-full max-w-[600px] bg-white/82 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-[4px] sm:p-6 md:p-7 lg:p-8">
               <h2 className="text-center text-[30px] font-light leading-none tracking-[-0.03em] text-[#1c3440] sm:text-[36px] md:text-[42px]">
                 Start Planning
@@ -187,12 +197,12 @@ export default function Wellcom() {
                 </div>
 
                 <div className="pt-2 text-center">
-                  <button
-                    type="submit"
-                    className="min-w-[190px] bg-[#a99258] px-8 py-3 text-[15px] font-medium uppercase tracking-[0.14em] text-white transition hover:opacity-90"
+                  <a
+                    href="/start-planning"
+                    className="inline-flex min-w-[190px] items-center justify-center bg-[#a99258] px-8 py-3 text-[15px] font-medium uppercase tracking-[0.14em] text-white transition hover:opacity-90"
                   >
-                    Submit
-                  </button>
+                    Continue
+                  </a>
                 </div>
               </form>
             </div>
@@ -203,7 +213,7 @@ export default function Wellcom() {
       {/* Arrows */}
       <button
         onClick={goPrev}
-        className="absolute left-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[30px] text-white backdrop-blur-sm transition hover:bg-black/25 md:left-8 md:h-14 md:w-14"
+        className="absolute left-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[30px] text-white backdrop-blur-sm transition hover:bg-black/25 md:flex md:left-8 md:h-14 md:w-14"
         aria-label="Previous slide"
       >
         ‹
@@ -211,7 +221,7 @@ export default function Wellcom() {
 
       <button
         onClick={goNext}
-        className="absolute right-4 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[30px] text-white backdrop-blur-sm transition hover:bg-black/25 md:right-8 md:h-14 md:w-14"
+        className="absolute right-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[30px] text-white backdrop-blur-sm transition hover:bg-black/25 md:flex md:right-8 md:h-14 md:w-14"
         aria-label="Next slide"
       >
         ›

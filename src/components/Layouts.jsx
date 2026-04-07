@@ -74,6 +74,7 @@ export default function Layouts() {
 
   const overlayPages = ["/", "/venues", "/group-services", "/room-blocks", "/gallery"];
   const isOverlayPage = overlayPages.includes(pathname);
+  const isStartPlanningPage = pathname === "/start-planning";
 
   return (
     <div className="min-h-screen bg-white">
@@ -83,13 +84,13 @@ export default function Layouts() {
       <main
         className={`${
           isOverlayPage ? "pt-[56px] md:pt-[40px]" : "pt-[200px] md:pt-[140px]"
-        } pb-[74px] lg:pb-0`}
+        } ${isStartPlanningPage ? "pb-0" : "pb-[74px] lg:pb-0"}`}
       >
         <Outlet />
       </main>
 
       <Footer />
-      <MobileBottomBar />
+      {!isStartPlanningPage && <MobileBottomBar />}
     </div>
   );
 }
