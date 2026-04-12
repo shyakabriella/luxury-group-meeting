@@ -1,23 +1,27 @@
 import React, { useEffect, useState } from "react";
+import hotelEntrance from "../../assets/meeting-pictures/hotel-entrance.jpg";
+import meetingOne from "../../assets/meeting-pictures/meeting-1.jpg";
+import hotelPhoto from "../../assets/meeting-pictures/hotel-photo.png";
+import meetingGarden from "../../assets/meeting-pictures/hotel-garden.png";
 
 const slides = [
   {
-    image: "/home1.jpg",
+    image: hotelEntrance,
     eyebrow: "Groups & Meetings",
     title: ["Disconnect And", "Reconnect In", "Fresno"],
   },
   {
-    image: "/home2.jpg",
+    image: meetingOne,
     eyebrow: "Weddings & Events",
     title: ["Celebrate Big", "Moments With", "Us"],
   },
   {
-    image: "/home3.jpg",
+    image: hotelPhoto,
     eyebrow: "Retreats & Gatherings",
     title: ["Reconnect In", "Nature And", "Comfort"],
   },
   {
-    image: "/home4.jpg",
+    image: meetingGarden,
     eyebrow: "Luxury Experiences",
     title: ["Plan Your", "Next Memorable", "Escape"],
   },

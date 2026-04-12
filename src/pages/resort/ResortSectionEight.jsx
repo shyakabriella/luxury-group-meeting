@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
+import hotelGarden from "../../assets/meeting-pictures/hotel-garden.png";
+import meetingOne from "../../assets/meeting-pictures/meeting-1.jpg";
+import meetingtwo from "../../assets/meeting-pictures/meeting-3.JPG";
+import hotelImage from "../../assets/meeting-pictures/hotel-entrance.jpg";
 
 const galleryImages = [
-  { image: "/home1.jpg", alt: "Meeting session at the resort" },
-  { image: "/home2.jpg", alt: "Wonder Valley entrance view" },
-  { image: "/home3.jpg", alt: "Resort dining experience" },
-  { image: "/home4.jpg", alt: "Horse carriage activity at the resort" },
+  { image: hotelImage, alt: "Meeting session at the resort" },
+  { image: meetingtwo, alt: "Wonder Valley entrance view" },
+  { image: meetingOne, alt: "Resort dining experience" },
+  { image: hotelGarden, alt: "Horse carriage activity at the resort" },
 ];
 
 export default function ResortSectionEight() {

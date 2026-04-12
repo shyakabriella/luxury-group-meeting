@@ -366,10 +366,7 @@ export default function Venues() {
                 </h2>
 
                 <p className="mt-5 text-[15px] leading-[1.8] text-white/82 sm:text-[16px] md:text-[17px] lg:text-[18px]">
-                  Wonder Valley Ranch Resort is located in a secluded natural
-                  setting near Fresno, giving your guests a venue experience
-                  that feels private, scenic, and memorable from the moment they
-                  arrive.
+                  Our Luxury Apartments are ideally located in a prime and well-connected neighborhood, offering residents the perfect balance between city convenience and peaceful living. This setting provides individuals and families with a comfortable, private environment, enhanced by modern amenities, spacious designs, and thoughtfully crafted living spaces that make everyday life feel effortless and elevated.
                 </p>
               </div>
             </div>

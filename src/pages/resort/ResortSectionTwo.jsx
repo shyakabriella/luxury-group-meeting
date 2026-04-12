@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import hotelImage from "../../assets/meeting-pictures/hotel-photo.png";
+import hotelGarden from "../../assets/meeting-pictures/hotel-garden.png";
 
 export default function ResortSectionTwo() {
   const sectionRef = useRef(null);
@@ -13,7 +15,7 @@ export default function ResortSectionTwo() {
           setShow(true);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (currentSection) {
@@ -37,14 +39,12 @@ export default function ResortSectionTwo() {
           {/* Left Large Image */}
           <div
             className={`transition-all duration-1000 ease-out ${
-              show
-                ? "translate-x-0 opacity-100"
-                : "-translate-x-16 opacity-0"
+              show ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
             }`}
           >
             <div className="mx-auto w-full max-w-[560px] lg:mx-0">
               <img
-                src="/home2.jpg"
+                src={hotelImage}
                 alt="Resort outdoor venue"
                 className="h-[360px] w-full object-cover sm:h-[460px] md:h-[560px] lg:h-[690px] xl:h-[720px]"
               />
@@ -56,16 +56,14 @@ export default function ResortSectionTwo() {
             {/* Text Block */}
             <div
               className={`transition-all duration-1000 ease-out delay-150 ${
-                show
-                  ? "translate-x-0 opacity-100"
-                  : "translate-x-16 opacity-0"
+                show ? "translate-x-0 opacity-100" : "translate-x-16 opacity-0"
               }`}
             >
               <p
                 className="text-[15px] font-normal leading-[1.5] text-[#9b7a58] sm:text-[16px] md:text-[18px]"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Corporate Retreat in California
+                Luxury Apartments
               </p>
 
               <h2
@@ -83,27 +81,26 @@ export default function ResortSectionTwo() {
                 className="mt-6 max-w-[720px] text-[17px] leading-[1.9] text-[#233235] sm:text-[18px] md:mt-8 md:text-[19px] lg:max-w-[650px]"
                 style={{ fontFamily: "Montserrat, sans-serif" }}
               >
-                Whether you&apos;re planning a business conference, corporate
-                retreat, or family reunion, Wonder Valley Ranch Resort offers
-                experiences that no other setting in California can. A wide
-                array of meeting rooms and outdoor venues provide the perfect
-                backdrop in a secluded, natural setting near Fresno, CA, while
-                world-class activities provide your guests with exceptional
-                opportunities for team-building.
+                Whether you're looking for a long-term residence, a stylish city
+                escape, or a comfortable place for your family, our Luxury
+                Apartments offer a living experience that stands out. Designed
+                with modern elegance and functionality in mind, each unit
+                provides spacious layouts, high-end finishes, and a peaceful
+                atmosphere. Located in a prime area, residents enjoy easy access
+                to essential amenities while still benefiting from privacy and
+                comfort—making it the perfect place to call home.
               </p>
             </div>
 
             {/* Lower Right Image */}
             <div
               className={`mt-10 transition-all duration-1000 ease-out delay-300 md:mt-12 lg:mt-16 ${
-                show
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-16 opacity-0"
+                show ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
               }`}
             >
               <div className="mx-auto w-full max-w-[660px] lg:mx-0">
                 <img
-                  src="/home3.jpg"
+                  src={hotelGarden}
                   alt="Guests enjoying the resort"
                   className="h-[280px] w-full object-cover sm:h-[360px] md:h-[430px] lg:h-[440px] xl:h-[470px]"
                 />
