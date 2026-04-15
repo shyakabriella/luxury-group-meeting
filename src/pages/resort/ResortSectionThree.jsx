@@ -1,29 +1,32 @@
 import React, { useEffect, useRef, useState } from "react";
+import meetingOne from "../../assets/meeting-pictures/meeting-1.jpg";
+import meetingTwo from "../../assets/meeting-pictures/meeting-2.JPG";
+import meetingThree from "../../assets/meeting-pictures/meeting-3.JPG";
 
 const slides = [
   {
     id: "01",
-    eyebrow: "Why Choose Wonder Valley?",
+    eyebrow: "Why Choose Luxury?",
     title: "Easy to Plan",
     description:
       "Our seamless event planning experience includes versatile venue options, on-site catering, bar service, conference suites, and overnight accommodations—all in one place, expertly managed by our team.",
-    image: "/home3.jpg",
+    image: meetingTwo,
   },
   {
     id: "02",
-    eyebrow: "Why Choose Wonder Valley?",
+    eyebrow: "Why Choose Luxury?",
     title: "Easy to Enjoy",
     description:
       "From group retreats and business meetings to unforgettable celebrations, our resort offers flexible spaces, beautiful surroundings, and a warm atmosphere your guests will truly enjoy.",
-    image: "/home2.jpg",
+    image: meetingOne,
   },
   {
     id: "03",
-    eyebrow: "Why Choose Wonder Valley?",
+    eyebrow: "Why Choose Luxury?",
     title: "Easy to Remember",
     description:
       "Create meaningful experiences with elegant venues, comfortable accommodations, and outdoor moments that leave a lasting impression on every member of your group.",
-    image: "/home4.jpg",
+    image: meetingThree,
   },
 ];
 

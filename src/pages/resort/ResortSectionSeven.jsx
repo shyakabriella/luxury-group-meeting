@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import locationImage from "../../assets/meeting-pictures/hotel-photo.png"
 
 function TreeIcon() {
   return (
@@ -56,7 +57,7 @@ export default function ResortSectionSeven() {
           >
             <div className="mx-auto w-full max-w-[980px] overflow-hidden">
               <img
-                src="/home1.jpg"
+                src={locationImage}
                 alt="Resort landscape"
                 className="h-[260px] w-full object-cover sm:h-[340px] md:h-[430px] lg:h-[520px]"
               />
@@ -78,7 +79,7 @@ export default function ResortSectionSeven() {
           >
             <div className="mx-auto max-w-[560px] text-center lg:mx-0 lg:text-left">
               <p className="text-[18px] font-medium text-[#a17d5a] sm:text-[20px] md:text-[22px]">
-                Location
+                Luxury
               </p>
 
               <h2 className="mt-5 text-[42px] font-light leading-[0.95] tracking-[-0.03em] text-[#1e3b3d] sm:text-[56px] md:text-[70px] lg:text-[82px] xl:text-[90px]">

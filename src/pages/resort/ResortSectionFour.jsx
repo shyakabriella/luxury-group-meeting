@@ -1,4 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
+import backgroundImage from "../../assets/meeting-pictures/meeting-1.jpg";
+import meetingHall from "../../assets/meeting-pictures/meeting-3.JPG";
+import smallImageMeeting from "../../assets/meeting-pictures/meeting-2.JPG";
 
 export default function ResortSectionFour() {
   const sectionRef = useRef(null);
@@ -13,7 +16,7 @@ export default function ResortSectionFour() {
           setShow(true);
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.15 },
     );
 
     if (currentSection) {
@@ -36,7 +39,7 @@ export default function ResortSectionFour() {
       {/* Background */}
       <div className="absolute inset-0">
         <img
-          src="/home4.jpg"
+          src={backgroundImage}
           alt="Wonder Valley background"
           className="h-full w-full object-cover grayscale"
         />
@@ -51,13 +54,11 @@ export default function ResortSectionFour() {
             {/* Main image */}
             <div
               className={`relative overflow-hidden shadow-[0_18px_45px_rgba(0,0,0,0.28)] transition-all duration-1000 ease-out ${
-                show
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-16 opacity-0"
+                show ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0"
               }`}
             >
               <img
-                src="/home1.jpg"
+                src={meetingHall}
                 alt="Aerial view of Wonder Valley"
                 className="h-[240px] w-full object-cover sm:h-[300px] md:h-[360px] lg:h-[420px] xl:h-[460px]"
               />
@@ -66,9 +67,7 @@ export default function ResortSectionFour() {
             {/* Small image mobile */}
             <div
               className={`relative z-20 mx-auto -mt-12 w-[72%] max-w-[280px] overflow-hidden shadow-[0_16px_40px_rgba(0,0,0,0.35)] transition-all duration-1000 delay-200 ease-out md:hidden ${
-                show
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-12 opacity-0"
+                show ? "translate-y-0 opacity-100" : "translate-y-12 opacity-0"
               }`}
             >
               <img
@@ -85,7 +84,7 @@ export default function ResortSectionFour() {
               }`}
             >
               <img
-                src="/home2.jpg"
+                src={smallImageMeeting}
                 alt="Wonder Valley scenic setting"
                 className="h-[180px] w-full object-cover lg:h-[220px] xl:h-[250px] 2xl:h-[280px]"
               />
@@ -100,7 +99,7 @@ export default function ResortSectionFour() {
           >
             <div className="max-w-[470px] xl:ml-auto">
               <p className="text-[16px] font-normal leading-[1.4] text-white/92 sm:text-[18px] md:text-[19px]">
-                Location
+                Luxury
               </p>
 
               <h2
@@ -115,11 +114,13 @@ export default function ResortSectionFour() {
               </h2>
 
               <p className="mt-5 text-[15px] leading-[1.8] text-white/82 sm:text-[16px] md:text-[17px] lg:text-[18px]">
-                Wonder Valley Ranch Resort is located up in the Sierra Nevada
-                foothills, just outside the city of Fresno. This setting
-                provides all types of groups with a uniquely secluded event
-                locale, made even better by wide-ranging facilities and
-                immersive team experiences.
+                Our Luxury Apartments are ideally located in a prime and
+                well-connected neighborhood, offering residents the perfect
+                balance between city convenience and peaceful living. This
+                setting provides individuals and families with a comfortable,
+                private environment, enhanced by modern amenities, spacious
+                designs, and thoughtfully crafted living spaces that make
+                everyday life feel effortless and elevated.
               </p>
             </div>
           </div>
