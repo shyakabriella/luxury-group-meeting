@@ -7,23 +7,23 @@ import meetingGarden from "../../assets/meeting-pictures/hotel-garden.png";
 const slides = [
   {
     image: hotelEntrance,
-    eyebrow: "Groups & Meetings",
-    title: ["Disconnect And", "Reconnect In", "Fresno"],
+    eyebrow: "Corporate Meetings",
+    title: ["Host Productive", "Sessions In", "Luxury"],
   },
   {
     image: meetingOne,
-    eyebrow: "Weddings & Events",
-    title: ["Celebrate Big", "Moments With", "Us"],
+    eyebrow: "Conferences & Seminars",
+    title: ["Bring Teams", "Together For", "Innovation"],
   },
   {
     image: hotelPhoto,
-    eyebrow: "Retreats & Gatherings",
-    title: ["Reconnect In", "Nature And", "Comfort"],
+    eyebrow: "Executive Retreats",
+    title: ["Strategize In", "Comfort And", "Focus"],
   },
   {
     image: meetingGarden,
-    eyebrow: "Luxury Experiences",
-    title: ["Plan Your", "Next Memorable", "Escape"],
+    eyebrow: "Networking Events",
+    title: ["Connect With", "Colleagues And", "Partners"],
   },
 ];
 
@@ -33,50 +33,27 @@ export default function Wellcom() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
-    }, 7000);
-
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
-  const goNext = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
-
-  const goPrev = () => {
-    setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const goNext = () => setCurrent((prev) => (prev + 1) % slides.length);
+  const goPrev = () => setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <section className="relative min-h-[calc(100vh-56px)] overflow-hidden md:min-h-[calc(100vh-40px)]">
+    <section className="relative min-h-[calc(100vh-56px)] overflow-hidden">
       <style>
         {`
           @keyframes heroFadeUp {
-            0% {
-              opacity: 0;
-              transform: translateY(30px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
           }
-
           @keyframes heroSlowZoom {
-            0% {
-              transform: scale(1);
-            }
-            100% {
-              transform: scale(1.06);
-            }
+            0% { transform: scale(1); }
+            100% { transform: scale(1.04); }
           }
-
-          .hero-copy-animate {
-            animation: heroFadeUp 0.9s ease forwards;
-          }
-
-          .hero-bg-animate {
-            animation: heroSlowZoom 7s linear forwards;
-          }
+          .hero-copy-animate { animation: heroFadeUp 0.7s ease forwards; }
+          .hero-bg-animate { animation: heroSlowZoom 6s linear forwards; }
         `}
       </style>
 
@@ -85,7 +62,7 @@ export default function Wellcom() {
         {slides.map((slide, index) => (
           <div
             key={slide.image}
-            className={`absolute inset-0 transition-opacity duration-[1800ms] ease-in-out ${
+            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-in-out ${
               index === current ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -93,44 +70,34 @@ export default function Wellcom() {
               className={`absolute inset-0 bg-cover bg-center bg-no-repeat ${
                 index === current ? "hero-bg-animate" : ""
               }`}
-              style={{
-                backgroundImage: `url('${slide.image}')`,
-              }}
+              style={{ backgroundImage: `url('${slide.image}')` }}
             />
           </div>
         ))}
       </div>
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-black/38" />
-      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/18 to-black/30" />
+      <div className="absolute inset-0 bg-black/35" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/25" />
 
       {/* Main Content */}
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-56px)] max-w-[1800px] items-center px-4 pb-24 pt-[210px] sm:px-6 sm:pt-[220px] md:min-h-[calc(100vh-40px)] md:px-8 md:pb-8 md:pt-[130px] lg:px-10 lg:pt-[145px] xl:px-14">
-        <div className="grid w-full grid-cols-1 items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-10">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-56px)] max-w-[1400px] items-center px-4 pt-[120px] pb-12 sm:px-6 md:px-8 lg:px-10">
+        <div className="grid w-full grid-cols-1 items-center gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-8">
+          
           {/* Left Text */}
-          <div
-            key={`copy-${current}`}
-            className="hero-copy-animate flex min-h-[320px] items-end lg:min-h-[520px]"
-          >
-            <div className="max-w-[760px] pb-2 text-center lg:pb-8 lg:text-left">
-              <p className="mb-4 text-[12px] font-medium uppercase tracking-[0.18em] text-white/85 sm:text-[13px] md:mb-6 md:text-[16px]">
+          <div key={`copy-${current}`} className="hero-copy-animate flex min-h-[240px] items-end lg:min-h-[360px]">
+            <div className="max-w-[600px] pb-2 text-center lg:pb-6 lg:text-left">
+              <p className="mb-3 text-[11px] sm:text-[12px] md:text-[13px] font-medium uppercase tracking-[0.14em] text-white/85">
                 {slides[current].eyebrow}
               </p>
-
-              <h1 className="text-[42px] font-semibold leading-[0.95] tracking-[-0.04em] text-white drop-shadow-[0_3px_10px_rgba(0,0,0,0.45)] sm:text-[58px] md:text-[76px] lg:text-[90px] xl:text-[104px]">
-                {slides[current].title[0]}
-                <br />
-                {slides[current].title[1]}
-                <br />
-                {slides[current].title[2]}
+              <h1 className="text-[12px] mb-10 sm:text-[15px] md:text-[20px] lg:text-[30px] font-semibold leading-[1.05] tracking-[-0.03em] text-white drop-shadow">
+                {slides[current].title[0]} {slides[current].title[1]} {slides[current].title[2]}
               </h1>
-
               {/* Mobile Start Planning button only */}
-              <div className="mt-7 lg:hidden">
+              <div className="mt-5 lg:hidden">
                 <a
                   href="/start-planning"
-                  className="inline-flex min-h-[48px] items-center justify-center bg-[#a99258] px-7 text-[13px] font-medium uppercase tracking-[0.14em] text-white transition hover:opacity-90"
+                  className="inline-flex h-[40px] items-center justify-center bg-[#a99258] px-6 text-[12px] font-medium uppercase tracking-[0.12em] text-white transition hover:opacity-90"
                 >
                   Start Planning
                 </a>
@@ -140,71 +107,28 @@ export default function Wellcom() {
 
           {/* Right Form Card - desktop only */}
           <div className="hidden justify-center lg:flex lg:justify-end">
-            <div className="w-full max-w-[600px] bg-white/82 p-5 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-[4px] sm:p-6 md:p-7 lg:p-8">
-              <h2 className="text-center text-[30px] font-light leading-none tracking-[-0.03em] text-[#1c3440] sm:text-[36px] md:text-[42px]">
+            <div className="w-full rounded-md max-w-[480px] bg-white/85 p-5 shadow backdrop-blur-sm sm:p-6 md:p-6 lg:p-7">
+              <h2 className="text-center text-[22px] sm:text-[26px] md:text-[30px] font-light leading-none text-[#1c3440]">
                 Start Planning
               </h2>
-
-              <form className="mt-6 space-y-4 md:mt-7">
-                <input
-                  type="text"
-                  placeholder="First Name *"
-                  className="h-[46px] w-full border border-[#687174] bg-transparent px-4 text-[15px] text-[#324047] outline-none placeholder:text-[#324047]"
-                />
-
-                <input
-                  type="text"
-                  placeholder="Last Name *"
-                  className="h-[46px] w-full border border-[#687174] bg-transparent px-4 text-[15px] text-[#324047] outline-none placeholder:text-[#324047]"
-                />
-
-                <input
-                  type="email"
-                  placeholder="Email *"
-                  className="h-[46px] w-full border border-[#687174] bg-transparent px-4 text-[15px] text-[#324047] outline-none placeholder:text-[#324047]"
-                />
-
-                <input
-                  type="text"
-                  placeholder="Phone Number *"
-                  className="h-[46px] w-full border border-[#687174] bg-transparent px-4 text-[15px] text-[#324047] outline-none placeholder:text-[#324047]"
-                />
-
-                <input
-                  type="text"
-                  placeholder="Company *"
-                  className="h-[46px] w-full border border-[#687174] bg-transparent px-4 text-[15px] text-[#324047] outline-none placeholder:text-[#324047]"
-                />
-
-                <div className="space-y-3 pt-1">
-                  <label className="flex items-start gap-3 text-[14px] leading-[1.45] text-[#37454a]">
-                    <input
-                      type="checkbox"
-                      className="mt-1 h-4 w-4 shrink-0 appearance-none border border-[#687174] bg-transparent checked:bg-[#a99258]"
-                    />
-                    <span>
-                      I have read and agree to the{" "}
-                      <span className="font-semibold">Privacy Policy.</span>
-                    </span>
+              <form className="mt-5 space-y-3">
+                <input type="text" placeholder="First Name *" className="h-[38px] w-full border border-[#687174] bg-transparent px-3 text-[13px] text-[#324047] placeholder:text-[#324047]" />
+                <input type="text" placeholder="Last Name *" className="h-[38px] w-full border border-[#687174] bg-transparent px-3 text-[13px] text-[#324047] placeholder:text-[#324047]" />
+                <input type="email" placeholder="Email *" className="h-[38px] w-full border border-[#687174] bg-transparent px-3 text-[13px] text-[#324047] placeholder:text-[#324047]" />
+                <input type="text" placeholder="Phone Number *" className="h-[38px] w-full border border-[#687174] bg-transparent px-3 text-[13px] text-[#324047] placeholder:text-[#324047]" />
+                <input type="text" placeholder="Company *" className="h-[38px] w-full border border-[#687174] bg-transparent px-3 text-[13px] text-[#324047] placeholder:text-[#324047]" />
+                <div className="space-y-2 pt-1 text-[12px] text-[#37454a]">
+                  <label className="flex items-start gap-2">
+                    <input type="checkbox" className="mt-0.5 h-3 w-3 border border-[#687174] checked:bg-[#a99258]" />
+                    <span>I agree to the Privacy Policy.</span>
                   </label>
-
-                  <label className="flex items-start gap-3 text-[14px] leading-[1.45] text-[#37454a]">
-                    <input
-                      type="checkbox"
-                      className="mt-1 h-4 w-4 shrink-0 appearance-none border border-[#687174] bg-transparent checked:bg-[#a99258]"
-                    />
-                    <span>
-                      Absolutely, I&apos;d like to be contacted regarding my
-                      request.
-                    </span>
+                  <label className="flex items-start gap-2">
+                    <input type="checkbox" className="mt-0.5 h-3 w-3 border border-[#687174] checked:bg-[#a99258]" />
+                    <span>Yes, contact me regarding my request.</span>
                   </label>
                 </div>
-
                 <div className="pt-2 text-center">
-                  <a
-                    href="/start-planning"
-                    className="inline-flex min-w-[190px] items-center justify-center bg-[#a99258] px-8 py-3 text-[15px] font-medium uppercase tracking-[0.14em] text-white transition hover:opacity-90"
-                  >
+                  <a href="/start-planning" className="inline-flex min-w-[140px] items-center justify-center bg-[#a99258] px-6 py-2.5 text-[12px] font-medium uppercase tracking-[0.12em] text-white rounded-md transition hover:opacity-90">
                     Continue
                   </a>
                 </div>
@@ -215,19 +139,10 @@ export default function Wellcom() {
       </div>
 
       {/* Arrows */}
-      <button
-        onClick={goPrev}
-        className="absolute left-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[30px] text-white backdrop-blur-sm transition hover:bg-black/25 md:flex md:left-8 md:h-14 md:w-14"
-        aria-label="Previous slide"
-      >
+      <button onClick={goPrev} className="absolute left-4 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[22px] text-white backdrop-blur-sm transition hover:bg-black/25 md:flex md:left-8">
         ‹
       </button>
-
-      <button
-        onClick={goNext}
-        className="absolute right-4 top-1/2 z-20 hidden h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[30px] text-white backdrop-blur-sm transition hover:bg-black/25 md:flex md:right-8 md:h-14 md:w-14"
-        aria-label="Next slide"
-      >
+      <button onClick={goNext} className="absolute right-4 top-1/2 z-20 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/65 bg-black/10 text-[22px] text-white backdrop-blur-sm transition hover:bg-black/25 md:flex md:right-8">
         ›
       </button>
     </section>

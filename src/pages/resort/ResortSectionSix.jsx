@@ -28,8 +28,7 @@ export default function ResortSectionSix() {
   useEffect(() => {
     const timer = setInterval(() => {
       handleNext();
-    }, 7000);
-
+    }, 6000); // slightly faster cycle
     return () => clearInterval(timer);
   }, []);
 
@@ -50,33 +49,24 @@ export default function ResortSectionSix() {
 
   return (
     <section
-      className="w-full overflow-hidden bg-[#f3f2ee] py-8 sm:py-10 md:py-12 lg:py-14"
+      className="w-full overflow-hidden bg-[#f3f2ee] py-6 sm:py-8 md:py-10 lg:py-12"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       <style>
         {`
           @keyframes testimonialFadeUp {
-            0% {
-              opacity: 0;
-              transform: translateY(14px);
-            }
-            100% {
-              opacity: 1;
-              transform: translateY(0);
-            }
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
           }
-
-          .testimonial-fade-up {
-            animation: testimonialFadeUp 0.7s ease;
-          }
+          .testimonial-fade-up { animation: testimonialFadeUp 0.6s ease; }
         `}
       </style>
 
-      <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1000px] px-4 sm:px-6 md:px-8 lg:px-10">
         {/* Section Title */}
         <div className="text-center">
           <h2
-            className="text-[30px] font-normal leading-[1] text-[#223244] sm:text-[38px] md:text-[48px] lg:text-[56px]"
+            className="text-[22px] sm:text-[26px] md:text-[30px] lg:text-[34px] font-light leading-[1.2] text-[#223244]"
             style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
           >
             Our Favorite Success Stories
@@ -84,39 +74,27 @@ export default function ResortSectionSix() {
         </div>
 
         {/* Desktop Layout */}
-        <div className="relative mt-8 hidden items-center justify-center md:flex">
+        <div className="relative mt-6 hidden items-center justify-center md:flex">
           <button
             onClick={handlePrev}
             aria-label="Previous testimonial"
-            className="absolute left-0 flex h-[46px] w-[46px] items-center justify-center rounded-full bg-[#a88f53] text-white transition duration-300 hover:scale-105 hover:bg-[#947b43]"
+            className="absolute left-0 flex h-[38px] w-[38px] items-center justify-center rounded-full bg-[#a88f53] text-white transition hover:scale-105 hover:bg-[#947b43]"
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-            >
-              <path
-                d="M15 18l-6-6 6-6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            ‹
           </button>
 
-          <div className="mx-auto w-full max-w-[820px] px-12 text-center">
+          <div className="mx-auto w-full max-w-[700px] px-8 text-center">
             <div key={current} className={animate ? "testimonial-fade-up" : ""}>
-              <h3 className="text-[20px] font-semibold leading-[1.35] text-[#233f43] md:text-[24px]">
+              <h3 className="text-[16px] sm:text-[18px] md:text-[20px] font-semibold leading-[1.3] text-[#233f43]">
                 {testimonials[current].title}
               </h3>
 
-              <p className="mx-auto mt-4 max-w-[720px] text-[17px] leading-[1.65] text-[#1f1f1f] md:text-[18px]">
+              <p className="mx-auto mt-3 max-w-[600px] text-[13px] sm:text-[14px] md:text-[15px] leading-[1.6] text-[#1f1f1f]">
                 “{testimonials[current].quote}”
               </p>
 
               <p
-                className="mt-5 text-[16px] italic text-[#2a2a2a]"
+                className="mt-4 text-[13px] italic text-[#2a2a2a]"
                 style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
               >
                 -{testimonials[current].author}
@@ -127,38 +105,26 @@ export default function ResortSectionSix() {
           <button
             onClick={handleNext}
             aria-label="Next testimonial"
-            className="absolute right-0 flex h-[46px] w-[46px] items-center justify-center rounded-full bg-[#a88f53] text-white transition duration-300 hover:scale-105 hover:bg-[#947b43]"
+            className="absolute right-0 flex h-[38px] w-[38px] items-center justify-center rounded-full bg-[#a88f53] text-white transition hover:scale-105 hover:bg-[#947b43]"
           >
-            <svg
-              viewBox="0 0 24 24"
-              className="h-5 w-5"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.8"
-            >
-              <path
-                d="M9 6l6 6-6 6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
+            ›
           </button>
         </div>
 
         {/* Mobile Layout */}
-        <div className="mt-7 md:hidden">
+        <div className="mt-6 md:hidden">
           <div className="text-center">
             <div key={current} className={animate ? "testimonial-fade-up" : ""}>
-              <h3 className="text-[20px] font-semibold leading-[1.35] text-[#233f43]">
+              <h3 className="text-[16px] font-semibold leading-[1.3] text-[#233f43]">
                 {testimonials[current].title}
               </h3>
 
-              <p className="mx-auto mt-4 max-w-[660px] text-[15px] leading-[1.75] text-[#1f1f1f] sm:text-[16px]">
+              <p className="mx-auto mt-3 max-w-[500px] text-[13px] sm:text-[14px] leading-[1.6] text-[#1f1f1f]">
                 “{testimonials[current].quote}”
               </p>
 
               <p
-                className="mt-5 text-[15px] italic text-[#2a2a2a]"
+                className="mt-4 text-[13px] italic text-[#2a2a2a]"
                 style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
               >
                 -{testimonials[current].author}
@@ -166,45 +132,20 @@ export default function ResortSectionSix() {
             </div>
           </div>
 
-          <div className="mt-6 flex items-center justify-center gap-4">
+          <div className="mt-5 flex items-center justify-center gap-3">
             <button
               onClick={handlePrev}
               aria-label="Previous testimonial"
-              className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#a88f53] text-white transition duration-300 hover:scale-105 hover:bg-[#947b43]"
+              className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#a88f53] text-white transition hover:scale-105 hover:bg-[#947b43]"
             >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-              >
-                <path
-                  d="M15 18l-6-6 6-6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              ‹
             </button>
-
             <button
               onClick={handleNext}
               aria-label="Next testimonial"
-              className="flex h-[44px] w-[44px] items-center justify-center rounded-full bg-[#a88f53] text-white transition duration-300 hover:scale-105 hover:bg-[#947b43]"
+              className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#a88f53] text-white transition hover:scale-105 hover:bg-[#947b43]"
             >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-5 w-5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-              >
-                <path
-                  d="M9 6l6 6-6 6"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
+              ›
             </button>
           </div>
         </div>

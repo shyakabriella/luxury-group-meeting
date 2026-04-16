@@ -6,7 +6,6 @@ const LOGO_SRC = "/losgo.png";
 const topNavLinks = [
   { label: "VENUES", href: "/venues" },
   { label: "GROUP SERVICES", href: "/group-services" },
-  { label: "ROOM BLOCKS", href: "/room-blocks" },
   { label: "GALLERY", href: "/gallery" },
 ];
 
@@ -16,12 +15,12 @@ function ConferenceLogo({ isScrolled = false, menuVersion = false }) {
       <img
         src={LOGO_SRC}
         alt="Wonder Valley Logo"
-        className={`w-auto object-contain transition-all duration-300 drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)] ${
+        className={`w-auto object-contain transition-all duration-300 drop-shadow ${
           menuVersion
-            ? "h-[62px] max-w-[250px] sm:h-[72px] md:h-[72px]"
+            ? "h-[40px] max-w-[160px] sm:h-[48px]"
             : isScrolled
-            ? "h-[110px] max-w-[360px] md:h-[78px] md:max-w-[230px] lg:h-[88px] lg:max-w-[260px]"
-            : "h-[138px] max-w-[460px] md:h-[88px] md:max-w-[260px] lg:h-[98px] lg:max-w-[290px]"
+            ? "h-[50px] max-w-[180px] md:h-[52px] md:max-w-[190px] lg:h-[56px] lg:max-w-[200px]"
+            : "h-[60px] max-w-[200px] md:h-[56px] md:max-w-[190px] lg:h-[60px] lg:max-w-[210px]"
         }`}
       />
     </a>
@@ -127,8 +126,9 @@ export default function Header() {
 
               <div className="hidden lg:flex items-center shrink-0">
                 <a
-                  href="/start-planning"
-                  className="inline-flex min-h-[58px] min-w-[270px] items-center justify-center bg-[#9f8850] px-8 text-[15px] font-medium uppercase tracking-[0.16em] text-white transition hover:bg-[#8e7948]"
+                  href="https://direct-book.com/properties/luxurygardenpalace/contact?locale=en&items[0][adults]=2&items[0][children]=0&items[0][infants]=0&currency=USD&checkInDate=2026-04-16&checkOutDate=2026-04-17&trackPage=yes"
+                  target="_blank"
+                  className="inline-flex min-h-[40px] min-w-[200px] items-center justify-center bg-[#9f8850] px-8 text-[15px] font-medium uppercase tracking-[0.16em] text-white transition hover:bg-[#8e7948] rounded-md"
                 >
                   Start Planning
                 </a>

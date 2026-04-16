@@ -20,13 +20,14 @@ const amenities = [
 
 export default function ResortBanner() {
   return (
-    <section className="w-full bg-[#f3f2ee] py-12 sm:py-14 md:py-16 lg:py-20">
-      <div className="mx-auto max-w-[1280px] px-5 sm:px-6 md:px-10 lg:px-12">
+    <section className="w-full bg-[#f3f2ee] py-8 sm:py-10 md:py-12 lg:py-14">
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-6 md:px-8 lg:px-10">
+        
         {/* Title with side lines */}
-        <div className="flex items-center justify-center gap-4 sm:gap-6 md:gap-8">
+        <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6">
           <span className="h-px flex-1 bg-[#b59a74]" />
           <h2
-            className="shrink-0 text-center text-[30px] font-normal leading-none text-[#143554] sm:text-[38px] md:text-[50px] lg:text-[54px]"
+            className="shrink-0 text-center text-[20px] sm:text-[24px] md:text-[28px] lg:text-[32px] font-light leading-none text-[#143554]"
             style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
           >
             Our Meeting Amenities
@@ -35,19 +36,19 @@ export default function ResortBanner() {
         </div>
 
         {/* Amenities list */}
-        <div className="mt-10 grid grid-cols-1 gap-y-2 sm:mt-12 md:mt-14 lg:grid-cols-3 lg:gap-x-10 xl:gap-x-16">
+        <div className="mt-8 grid grid-cols-1 gap-y-2 sm:mt-10 md:mt-12 lg:grid-cols-3 lg:gap-x-8 xl:gap-x-12">
           {amenities.map((column, columnIndex) => (
             <ul
               key={columnIndex}
-              className="space-y-4 px-2 text-left md:px-6 lg:px-4"
+              className="space-y-3 px-2 md:px-4 lg:px-3"
               style={{ fontFamily: "Montserrat, sans-serif" }}
             >
               {column.map((item) => (
                 <li
                   key={item}
-                  className="flex items-start gap-3 text-[16px] font-normal leading-[1.7] text-[#161616] sm:text-[17px] md:text-[18px]"
+                  className="flex items-center gap-2 text-[13px] sm:text-[14px] md:text-[15px] font-normal leading-[1.5] text-[#161616]"
                 >
-                  <span className="mt-[10px] h-[5px] w-[5px] shrink-0 rounded-full bg-[#9b7a58]" />
+                  <span className="mt-[6px] h-[4px] w-[4px] shrink-0 rounded-full bg-[#9b7a58]" />
                   <span>{item}</span>
                 </li>
               ))}
@@ -56,7 +57,7 @@ export default function ResortBanner() {
         </div>
 
         {/* Bottom line */}
-        <div className="mt-12 sm:mt-14 md:mt-16">
+        <div className="mt-10 sm:mt-12 md:mt-14">
           <span className="block h-px w-full bg-[#b59a74]" />
         </div>
       </div>

@@ -1,25 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-const galleryImages = [
-  { src: "/home1.jpg", alt: "Wonder Valley entrance" },
-  { src: "/home2.jpg", alt: "Elegant indoor event venue" },
-  { src: "/home3.jpg", alt: "Horse carriage experience" },
-  { src: "/home4.jpg", alt: "Business meeting session" },
+import GalleryBanner from "../../assets/meeting-pictures/hotel-garden.png";
 
-  { src: "/home2.jpg", alt: "Guests enjoying food together" },
-  { src: "/home3.jpg", alt: "Outdoor adventure activity" },
-  { src: "/home4.jpg", alt: "Chef plating gourmet food" },
-  { src: "/home1.jpg", alt: "Guests celebrating with wine" },
-
-  { src: "/home3.jpg", alt: "Horseback trail activity" },
-  { src: "/home4.jpg", alt: "Cocktail service moment" },
-  { src: "/home1.jpg", alt: "Conference room gathering" },
-  { src: "/home2.jpg", alt: "Group walking outdoors" },
-
-  { src: "/home4.jpg", alt: "Presentation session" },
-  { src: "/home1.jpg", alt: "Campfire and wine gathering" },
-  { src: "/home2.jpg", alt: "Relaxed guest experience" },
-];
+import galleryImages from "./galleryImages"
 
 export default function Garelly() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -66,57 +49,47 @@ export default function Garelly() {
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       {/* HERO */}
-      <section className="relative min-h-[62vh] overflow-hidden">
+      <section className="relative h-[50vh] overflow-hidden">
         <img
-          src="/home4.jpg"
+          src={GalleryBanner}
           alt="Gallery hero"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover rounded-md"
         />
-        <div className="absolute inset-0 bg-[rgba(22,18,15,0.38)]" />
+        <div className="absolute inset-0 bg-black/40 rounded-md" />
 
-        <div className="absolute left-0 right-0 top-[118px] z-10 hidden border-t border-white/45 lg:block" />
-
-        <div className="relative z-20 mx-auto flex min-h-[62vh] max-w-[1600px] items-center justify-center px-5 text-center sm:px-6 md:px-8 lg:px-10">
-          <div className="pt-28 pb-14 md:pt-32 md:pb-20">
-            <p className="text-[16px] font-medium uppercase tracking-[0.22em] text-white/85 sm:text-[17px]">
-              Wonder Valley Ranch Resort
-            </p>
-
+        <div className="relative z-10 flex items-center justify-center h-full text-center px-6 mt-5">
+          <div>
             <h1
-              className="mt-4 text-[54px] font-normal leading-[0.95] text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.2)] sm:text-[70px] md:text-[90px] lg:text-[108px]"
-              style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
+              className="mt-2 text-[24px] md:text-[32px] text-white"
+              style={{ fontFamily: '"Cormorant Garamond", serif' }}
             >
               Gallery
             </h1>
 
-            <p className="mx-auto mt-5 max-w-[860px] text-[17px] leading-[1.85] text-white/88 sm:text-[18px] md:text-[20px]">
-              Explore moments from our venues, dining, meetings, retreats,
-              celebrations, and memorable group experiences.
+            <p className="mt-3 max-w-[500px] mx-auto text-[13px] leading-[1.6] text-white/90">
+              Explore moments from our venues, dining, meetings, and celebrations.
             </p>
           </div>
         </div>
       </section>
 
       {/* INTRO */}
-      <section className="bg-[#f1f0eb] py-14 sm:py-16 md:py-20">
-        <div className="mx-auto max-w-[980px] px-5 text-center sm:px-6 md:px-8">
-          <p className="text-[18px] font-normal text-[#a37f58] sm:text-[20px]">
-            A Closer Look
-          </p>
+      <section className="py-12 px-6 text-center">
+        <p className="text-[11px] text-[#a37f58] uppercase tracking-[0.12em]">
+          A Closer Look
+        </p>
 
-          <h2
-            className="mt-3 text-[44px] font-normal leading-[0.98] text-[#23354a] sm:text-[58px] md:text-[72px]"
-            style={{ fontFamily: '"Cormorant Garamond", Georgia, serif' }}
-          >
-            Moments That Tell The Story
-          </h2>
+        <h2
+          className="mt-2 text-[20px] md:text-[28px] text-[#203549]"
+          style={{ fontFamily: '"Cormorant Garamond", serif' }}
+        >
+          Moments That Tell The Story
+        </h2>
 
-          <p className="mx-auto mt-6 max-w-[860px] text-[18px] leading-[1.8] text-[#181818] sm:text-[19px] md:text-[20px]">
-            From elegant meetings and gourmet dining to outdoor adventures and
-            warm group gatherings, every image reflects the experience guests
-            enjoy throughout the resort.
-          </p>
-        </div>
+        <p className="mt-4 max-w-[650px] mx-auto text-[13px] leading-[1.6] text-[#333]">
+          From elegant meetings and dining to outdoor experiences and celebrations,
+          every image reflects the moments our guests enjoy.
+        </p>
       </section>
 
       {/* GALLERY GRID */}

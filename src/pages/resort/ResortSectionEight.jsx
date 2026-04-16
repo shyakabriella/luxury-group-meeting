@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import hotelGarden from "../../assets/meeting-pictures/hotel-garden.png";
-import meetingOne from "../../assets/meeting-pictures/meeting-1.jpg";
-import meetingtwo from "../../assets/meeting-pictures/meeting-3.JPG";
+import meetingOne from "../../assets/meeting-pictures/many-people.png";
+import meetingtwo from "../../assets/meeting-pictures/business-meeting.png";
 import hotelImage from "../../assets/meeting-pictures/hotel-entrance.jpg";
 
 const galleryImages = [
@@ -17,95 +17,80 @@ export default function ResortSectionEight() {
 
   useEffect(() => {
     const currentSection = sectionRef.current;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setShow(true);
-        }
+        if (entry.isIntersecting) setShow(true);
       },
       { threshold: 0.12 }
     );
-
-    if (currentSection) {
-      observer.observe(currentSection);
-    }
-
+    if (currentSection) observer.observe(currentSection);
     return () => {
-      if (currentSection) {
-        observer.unobserve(currentSection);
-      }
+      if (currentSection) observer.unobserve(currentSection);
     };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="overflow-hidden bg-[#efeee8] py-8 sm:py-10 md:py-12 lg:py-14"
+      className="overflow-hidden bg-[#efeee8] py-6 sm:py-8 md:py-10 lg:py-12"
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
-      <div className="mx-auto max-w-[1600px] px-4 sm:px-5 md:px-6 lg:px-8">
-        <div className="bg-white p-[6px] sm:p-[8px]">
-          <div className="grid grid-cols-1 gap-[8px] lg:grid-cols-[1.05fr_1.2fr]">
-            {/* Left large image */}
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-5 md:px-6 lg:px-8">
+        <div className="bg-white p-[4px] sm:p-[6px]">
+          <div className="grid grid-cols-1 gap-[6px] lg:grid-cols-[1fr_1.1fr] lg:min-h-[320px]">
+            
+            {/* Left large image fills full height */}
             <div
-              className={`overflow-hidden transition-all duration-1000 ease-out ${
-                show
-                  ? "translate-x-0 opacity-100"
-                  : "-translate-x-14 opacity-0"
+              className={`overflow-hidden transition-all duration-700 ease-out ${
+                show ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
               }`}
             >
               <img
                 src={galleryImages[0].image}
                 alt={galleryImages[0].alt}
-                className="h-[300px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[420px] md:h-[560px] lg:h-[720px] xl:h-[760px]"
+                className="h-full w-full object-cover transition duration-500 hover:scale-[1.02]"
               />
             </div>
 
             {/* Right side collage */}
-            <div className="grid grid-cols-1 gap-[8px] lg:grid-rows-[1fr_auto]">
+            <div className="grid grid-cols-1 gap-[6px] lg:grid-rows-[1fr_auto]">
+              
               {/* Top right image */}
               <div
-                className={`overflow-hidden transition-all duration-1000 delay-150 ease-out ${
-                  show
-                    ? "translate-y-0 opacity-100"
-                    : "translate-y-12 opacity-0"
+                className={`overflow-hidden transition-all duration-700 delay-100 ease-out ${
+                  show ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                 }`}
               >
                 <img
                   src={galleryImages[1].image}
                   alt={galleryImages[1].alt}
-                  className="h-[220px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[280px] md:h-[340px] lg:h-[372px] xl:h-[392px]"
+                  className="h-[160px] w-full object-cover transition duration-500 hover:scale-[1.02]"
                 />
               </div>
 
               {/* Bottom two images */}
-              <div className="grid grid-cols-1 gap-[8px] sm:grid-cols-2">
+              <div className="grid grid-cols-1 gap-[6px] sm:grid-cols-2">
                 <div
-                  className={`overflow-hidden transition-all duration-1000 delay-300 ease-out ${
-                    show
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-12 opacity-0"
+                  className={`overflow-hidden transition-all duration-700 delay-200 ease-out ${
+                    show ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                   }`}
                 >
                   <img
                     src={galleryImages[2].image}
                     alt={galleryImages[2].alt}
-                    className="h-[220px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[250px] md:h-[290px] lg:h-[340px] xl:h-[360px]"
+                    className="h-[140px] w-full object-cover transition duration-500 hover:scale-[1.02]"
                   />
                 </div>
 
                 <div
-                  className={`overflow-hidden transition-all duration-1000 delay-500 ease-out ${
-                    show
-                      ? "translate-y-0 opacity-100"
-                      : "translate-y-12 opacity-0"
+                  className={`overflow-hidden transition-all duration-700 delay-300 ease-out ${
+                    show ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
                   }`}
                 >
                   <img
                     src={galleryImages[3].image}
                     alt={galleryImages[3].alt}
-                    className="h-[220px] w-full object-cover transition duration-700 hover:scale-[1.03] sm:h-[250px] md:h-[290px] lg:h-[340px] xl:h-[360px]"
+                    className="h-[140px] w-full object-cover transition duration-500 hover:scale-[1.02]"
                   />
                 </div>
               </div>
